@@ -13,7 +13,9 @@ import { AiOutlineClose } from 'react-icons/ai';
 export const Sidebar = () => {
 	const { toggleColorMode, colorMode } = useColorMode();
 	const { logout, isAdmin } = useAuth();
-	const [ marginLeft, setMarginLeft ] = useState(-288);
+	const [marginLeft, setMarginLeft] = useState(-288);
+
+	const isMobile = ('ontouchstart' in document.documentElement && navigator.userAgent.match(/Mobi/));
 
 	function handleMarginLeft() {
 		if (marginLeft === 0) {
@@ -28,14 +30,17 @@ export const Sidebar = () => {
 			display={'flex'}
 			width="full"
 			height="full"
-			marginLeft={marginLeft}
+			marginLeft={isMobile ? marginLeft : 0}
 			maxW={{ base: 72 }}
 			borderRightColor="gray.600"
 			borderRightWidth={2}
 		>
-			<Button marginLeft={344} marginTop={1} onClick={handleMarginLeft}>
-				{marginLeft === 0 ? <AiOutlineClose /> : <GiHamburgerMenu />}
-			</Button>
+			{
+				isMobile && <Button marginLeft={344} marginTop={1} onClick={handleMarginLeft}>
+					{marginLeft === 0 ? <AiOutlineClose /> : <GiHamburgerMenu />}
+				</Button>
+			}
+
 			<Logo />
 			<Box
 				display={'flex'}

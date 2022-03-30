@@ -12,7 +12,7 @@ export const theme = extendTheme({
         "gray.dark": "#1C1C1C",
         "gray.light": "#646464",
         "brand.red": "#A644CB",
-				"green.light":"#48BB78",
+        "green.light":"#48BB78",
     },
     fonts: {
         heading: `Circular Std Bold, ${base.fonts?.heading}`,
