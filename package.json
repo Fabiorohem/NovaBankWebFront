@@ -1,5 +1,5 @@
 {
-  "name": "novabankweb",
+  "name": "AgilizaApp",
   "private": true,
   "scripts": {
     "dev": "next dev",
