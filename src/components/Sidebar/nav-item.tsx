@@ -43,7 +43,7 @@ export const NavItem = ({ item, onClick }: Props) => {
 							height={5}
 							mr={{ sm: 3, md: 3, lg: 4, xl: 4 }}
 							ml={{ sm: 3, md: 3, lg: 4, xl: 4 }}
-							color={isActive ? 'brand.red' : secondaryTextColor}
+							color={isActive ? 'agiliza.purple' : secondaryTextColor}
 							as={icon}
 						/>
 						<Text
@@ -51,11 +51,11 @@ export const NavItem = ({ item, onClick }: Props) => {
 							fontWeight="medium"
 							flex={1}
 							letterSpacing="wider"
-							color={isActive ? 'brand.red' : secondaryTextColor}
+							color={isActive ? 'agiliza.purple' : secondaryTextColor}
 						>
 							{label}
 						</Text>
-						{isActive && <Box width={1} height={6} bg="brand.red" />}
+						{isActive && <Box width={1} height={6} bg="agiliza.purple" />}
 					</HStack>
 				</Link>
 			</NextLink>

@@ -30,7 +30,7 @@ export default function Extract() {
 						<Box p="4" />
 						<Spacer />
 						<Box p="4">
-							<Text fontSize="2xl" color={balance <= 0 ? 'brand.red' : 'green.light'}>
+							<Text fontSize="2xl" color={balance <= 0 ? 'agiliza.purple' : 'green.light'}>
 								Balanço {formatCurrency(balance)}
 							</Text>
 						</Box>

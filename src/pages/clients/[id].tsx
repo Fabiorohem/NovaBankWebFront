@@ -100,7 +100,7 @@ export default function Clients({ data }) {
 	return (
 		<Fragment>
 			<Box display={'flex'} maxH={'35px'}>
-				<Icon width="1.8rem" height="1.8rem" paddingTop={'2'} color={'brand.red'} as={RiSearchLine} />
+				<Icon width="1.8rem" height="1.8rem" paddingTop={'2'} color={'agiliza.purple'} as={RiSearchLine} />
 				<Text
 					fontSize="3xl"
 					display={'flex'}
@@ -217,7 +217,7 @@ export default function Clients({ data }) {
 				</FormControl>
 				<br />
 				<br />
-				<Button bg="brand.red" w="100%" marginBottom={4} onClick={handleUpdateClient} type="submit">
+				<Button bg="agiliza.purple" w="100%" marginBottom={4} onClick={handleUpdateClient} type="submit">
 					Atualizar Cliente
 				</Button>
 			</form>

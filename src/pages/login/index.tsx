@@ -43,7 +43,7 @@ export default function Login() {
 			alignItems="center"
 		>
 			<Stack flexDir="column" mb="2" justifyContent="center" alignItems="center">
-				<Heading color="red.400">Novabank</Heading>
+				<Heading color="agiliza.purple"><img src="https://agiliza.app.br/assets/img/logo.png" width="250"></img></Heading>
 				<Box minW={{ base: '90%', md: '468px' }}>
 					<form onSubmit={handleSubmit(handleSignIn)}>
 						<Stack spacing={4} p="1rem" backgroundColor="gray.900" boxShadow="md">
@@ -89,7 +89,7 @@ export default function Login() {
 									<Link>Esqueceu sua senha?</Link>
 								</FormHelperText>
 							</FormControl>
-							<Button borderRadius={0} type="submit" variant="solid" bg="brand.red" width="full">
+							<Button borderRadius={0} type="submit" variant="solid" bg="agiliza.purple" width="full">
 								Login
 							</Button>
 						</Stack>

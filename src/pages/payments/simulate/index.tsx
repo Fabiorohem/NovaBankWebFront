@@ -96,7 +96,7 @@ export default function Create() {
 					</FormControl>
 				</Grid>
 				<br />
-				<Button marginBottom={'20px'} bg="brand.red" w="100%" type="submit" onClick={handleSimulateAPayment}>
+				<Button marginBottom={'20px'} bg="agiliza.purple" w="100%" type="submit" onClick={handleSimulateAPayment}>
 					Simular pagamento
 				</Button>
 			</form>

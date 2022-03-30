@@ -353,7 +353,7 @@ export default function Create() {
 				<br />
 				<Button
 					marginBottom={'20px'}
-					bg="brand.red"
+					bg="agiliza.purple"
 					w="100%"
 					onClick={installment > 0 ? handleParcelCharge : handleCashCharge}
 					type="submit"

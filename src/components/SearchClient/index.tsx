@@ -60,7 +60,7 @@ const RenderActionButtons = ({ props }) => {
 					height={5}
 					mr={4}
 					ml={8}
-					color={'brand.red'}
+					color={'agiliza.purple'}
 					as={FcCheckmark}
 					onClick={() => {
 						setTimeout(() => {
@@ -121,7 +121,7 @@ const Filters = ({ onOpen }) => {
 						Filtrar
 					</Button>
 					<Button
-						colorScheme="red"
+						colorScheme="purple"
 						variant="outline"
 						onClick={() => {
 							setFilters({
@@ -160,7 +160,7 @@ const Clients = ({ setClientId, onClose, onOpen }) => {
 						textAlign: 'center',
 						marginLeft: 2
 					}}
-					colorScheme={'red'}
+					colorScheme={'purple'}
 					onClick={handleToggleFilters}
 				>
 					Filtros

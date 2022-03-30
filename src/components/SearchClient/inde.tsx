@@ -25,7 +25,7 @@ const RenderActionButtons = ({ props }) => {
                     height={5}
                     mr={4}
                     ml={8}
-                    color={'brand.red'}
+                    color={'agiliza.purple'}
                     as={FcCheckmark}
                     onClick={() => {
 
@@ -88,7 +88,7 @@ const Filters = ({onOpen}) => {
                     >
                         Filtrar
                     </Button>
-                    <Button colorScheme="red" variant="outline" onClick={() => {
+                    <Button colorScheme="purple" variant="outline" onClick={() => {
                             setFilters({
                                 name:'',
                                 cpfCnpj:''

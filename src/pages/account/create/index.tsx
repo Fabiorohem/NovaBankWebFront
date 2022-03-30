@@ -213,7 +213,7 @@ export default function Create() {
                 </Grid>
                 <br />
             
-                <Button marginBottom={'20px'} bg="brand.red" w="100%" type="submit" onClick={handleCreateAccount}>
+                <Button marginBottom={'20px'} bg="agiliza.purple" w="100%" type="submit" onClick={handleCreateAccount}>
                     Adicionar Conta
                 </Button>
             </form>

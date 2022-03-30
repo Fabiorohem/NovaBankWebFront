@@ -364,7 +364,7 @@ export default function Charges({ data }) {
 				<Button
 					onClick={installment > 0 ? handleParcelCharge : handleUpdateCharge}
 					marginBottom={'20px'}
-					bg="brand.red"
+					bg="agiliza.purple"
 					w="100%"
 					type="submit"
 				>

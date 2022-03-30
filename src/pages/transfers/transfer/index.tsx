@@ -261,7 +261,7 @@ export default function Transfer() {
 							<br />
 							<Button
 								marginBottom={'20px'}
-								bg="brand.red"
+								bg="agiliza.purple"
 								w="100%"
 								type="submit"
 								onClick={handleCreateBankTransfer}
@@ -304,7 +304,7 @@ export default function Transfer() {
 							<Button
 								marginTop={'20px'}
 								marginBottom={'20px'}
-								bg="brand.red"
+								bg="agiliza.purple"
 								w="100%"
 								type="submit"
 								onClick={handleCreateAsaasTransfer}

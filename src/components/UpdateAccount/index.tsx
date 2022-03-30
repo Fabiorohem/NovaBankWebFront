@@ -66,7 +66,7 @@ export const UpdateAccountModal = ({ account, isOpen, onClose }) => {
             let errorMessage = "";
             error.response?.data?.errors?.forEach(x =>{ errorMessage += "" + x.description + " "});
             
-            setErrorMessage(!errorMessage ? "Opps Algo deu errado!" : errorMessage)
+            setErrorMessage(!errorMessage ? "Ops Algo deu errado!" : errorMessage)
         }
     }
 
@@ -110,7 +110,7 @@ export const UpdateAccountModal = ({ account, isOpen, onClose }) => {
                             />
                         </FormControl>
                         <br></br>
-                        <Button marginBottom={'20px'} bg="brand.red" w="100%" type="submit" onClick={handleUpdate}>
+                        <Button marginBottom={'20px'} bg="agiliza.purple" w="100%" type="submit" onClick={handleUpdate}>
                             Atualizar Configurações
                         </Button>
                     </ModalBody>

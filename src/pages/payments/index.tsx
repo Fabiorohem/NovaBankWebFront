@@ -85,7 +85,7 @@ const RenderActionButtons = ({ props }) => {
 						height={5}
 						mr={2}
 						ml={0}
-						color={'brand.red'}
+						color={'agiliza.purple'}
 						as={MdDelete}
 						onClick={() => {
 							props.setPaymentId(props.id);

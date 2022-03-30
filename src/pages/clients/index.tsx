@@ -67,7 +67,7 @@ const RenderActionButtons = ({ props }) => {
 					height={5}
 					mr={2}
 					ml={2}
-					color={'brand.red'}
+					color={'agiliza.purple'}
 					as={MdDelete}
 					onClick={() => {
 						props.setClientId(props.id);
@@ -157,7 +157,7 @@ const Clients = () => {
 	return (
 		<Fragment>
 			<Box display={'flex'} maxH={'35px'}>
-				<Icon width="1.8rem" height="1.8rem" paddingTop={'2'} color={'brand.red'} as={RiSearchLine} />
+				<Icon width="1.8rem" height="1.8rem" paddingTop={'2'} color={'agiliza.purple'} as={RiSearchLine} />
 				<Text fontSize="3xl" paddingLeft={'10px'} paddingBottom={'10px'}>
 					Buscar Clientes
 				</Text>
