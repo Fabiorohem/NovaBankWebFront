@@ -128,7 +128,7 @@ const Filters = () => {
 					>
 						Filtrar
 					</Button>
-					<Button colorScheme="red" variant="outline" onClick={handleCleanInput}>
+					<Button colorScheme="agiliza.purple" variant="outline" onClick={handleCleanInput}>
 						Limpar Filtros
 					</Button>
 				</Stack>
@@ -183,7 +183,7 @@ const Clients = () => {
 					textAlign: 'center',
 					marginLeft: 2
 				}}
-				colorScheme={'red'}
+				colorScheme={'purple'}
 				onClick={handleToggleFilters}
 			>
 				Filtros
@@ -243,7 +243,7 @@ const Clients = () => {
 							Cancelar
 						</Button>
 						<Button
-							colorScheme="red"
+							colorScheme="agiliza.purple"
 							onClick={() => {
 								deleteClient(clientId);
 								onClose();

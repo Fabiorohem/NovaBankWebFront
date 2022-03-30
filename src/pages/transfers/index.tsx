@@ -80,7 +80,7 @@ const Filters = ({ props }) => {
 					<Button colorScheme="blue" variant="outline" onClick={handleGetAtransfer}>
 						Filtrar
 					</Button>
-					<Button colorScheme="red" variant="outline" onClick={handleCleanInput}>
+					<Button colorScheme="agiliza.purple" variant="outline" onClick={handleCleanInput}>
 						Limpar Filtros
 					</Button>
 				</Stack>
@@ -118,7 +118,7 @@ export default function Transfers() {
 							textAlign: 'center',
 							marginLeft: 2
 						}}
-						colorScheme={'red'}
+						colorScheme={'purple'}
 						onClick={handleToggleFilters}
 					>
 						Filtros
@@ -190,7 +190,7 @@ export default function Transfers() {
 							textAlign: 'center',
 							marginLeft: 2
 						}}
-						colorScheme={'red'}
+						colorScheme={'purple'}
 						onClick={handleToggleFilters}
 					>
 						Filtros

@@ -11,7 +11,7 @@ export const theme = extendTheme({
         "agiliza.purple": "#A644CB",
         "gray.dark": "#1C1C1C",
         "gray.light": "#646464",
-        "brand.red": "#E14949",
+        "brand.red": "#A644CB",
 				"green.light":"#48BB78",
     },
     fonts: {
