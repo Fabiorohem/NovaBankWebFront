@@ -104,7 +104,7 @@ export const Sidebar = () => {
 			<List width="full" overflowY="auto">
 				{navItems.map((item, index) => (
 					<ListItem key={item.label}>
-						<NavItem item={item} onClick={() => setMarginLeft(-248)} />
+						<NavItem item={item} onClick={() => setMarginLeft('-29vh')} />
 					</ListItem>
 				))}
 
