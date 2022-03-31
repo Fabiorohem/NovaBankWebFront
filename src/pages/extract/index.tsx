@@ -19,7 +19,7 @@ export default function Extract() {
 
 	return (
 		<Fragment>
-			<Box width={{ base: '100%' }} maxW={1200}>
+			<Box width={{ base: '100%' }} >
 				<Box w="100%">
 					<Text fontSize="3xl" textAlign={'center'}>
 						Extrato

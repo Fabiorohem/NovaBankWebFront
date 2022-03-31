@@ -126,7 +126,7 @@ export default function Transfers() {
 					<Box display={filters}>
 						<Filters props={{ setOpenPaymentTable }} />
 					</Box>
-					<Box width={{ base: '100%' }} maxW={1200}>
+					<Box width={{ base: '100%' }} >
 						<Table variant="simple" size={'sm'}>
 							{successMessage && (
 								<Alert status="success" variant="solid" paddingBottom={'22px'} paddingTop={'22px'}>
@@ -198,7 +198,7 @@ export default function Transfers() {
 					<Box display={filters}>
 						<Filters props={{ setOpenPaymentTable }} />
 					</Box>
-					<Box width={{ base: '100%' }} maxW={1200} >
+					<Box width={{ base: '100%' }}  >
 						<Table size={'sm'}>
 							<Thead>
 								<Tr>

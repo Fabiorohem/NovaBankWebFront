@@ -105,10 +105,10 @@ export default function Transfer() {
 
 	return (
 		<Fragment>
-			<Box w={{ base: '100%' }} maxW={1200} textAlign={'center'} pr={'2%'} pl={'2%'}>
+			<Box w={{ base: '100%' }}  textAlign={'center'} pr={'2%'} pl={'2%'}>
 				<Text fontSize="3xl">Transferência</Text>
 			</Box>
-			<Box w={{ base: '100%' }} maxW={1200} textAlign={'center'} pr={'2%'} pl={'2%'}>
+			<Box w={{ base: '100%' }}  textAlign={'center'} pr={'2%'} pl={'2%'}>
 				<FormControl>
 					<FormLabel htmlFor="accountType">Tipo de conta</FormLabel>
 					<Select value={transferType} onChange={(e) => setTransferType(e.target.value)}>
@@ -123,7 +123,7 @@ export default function Transfer() {
 				<Fragment>
 					<Box
 						width={{ base: '100%' }}
-						maxW={1200}
+						
 						height={10020}
 						overflowX={{ sm: 'scroll' }}
 						pr={'2%'}
@@ -273,7 +273,7 @@ export default function Transfer() {
 				</Fragment>
 			) : (
 				<Fragment>
-					<Box w={{ base: '100%' }} maxW={1200} textAlign={'center'} pr={'2%'} pl={'2%'}>
+					<Box w={{ base: '100%' }}  textAlign={'center'} pr={'2%'} pl={'2%'}>
 						<form style={{ width: '100%' }}>
 							<Box display={'flex'} alignSelf={'flex-start'} maxH={'35px'} marginBottom={'15px'}>
 								<Text fontSize="2xl" display={'flex'} alignItems={'left'}>

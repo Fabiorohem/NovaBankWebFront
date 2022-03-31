@@ -44,7 +44,7 @@ export default function Create() {
 					Adicionar cliente
 				</Text>
 			</Box>
-			<form style={{ width: '100%', maxWidth: 1120, paddingLeft: '2%', paddingRight: '4%' }} onSubmit={handleSubmit(handleCreateClient)}>
+			<form style={{ width: '100%', maxWidth: 1200, paddingLeft: '2%', paddingRight: '4%' }} onSubmit={handleSubmit(handleCreateClient)}>
 				<Grid templateColumns={{sm: "repeat(1, 1fr)",md:"repeat(2, 1fr)"}} gap={6}>
 					<FormControl>
 						<FormLabel htmlFor="nome">Nome</FormLabel>

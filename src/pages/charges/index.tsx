@@ -320,7 +320,7 @@ export default function Charges() {
 							/>
 						</Alert>
 					)}
-					<Box width={{ base: '100%' }} maxW={1200} overflowX={{ sm: 'scroll' }}>
+					<Box width={{ base: '100%' }}  overflowX={{ sm: 'scroll' }}>
 						<Table size={'sm'}>
 							<Thead>
 								<Tr>
@@ -371,8 +371,6 @@ export default function Charges() {
 								})}
 							</Tbody>
 						</Table>
-					</Box>
-					<Box width={{ base: '100%' }} maxW={1200} overflowX={{ sm: 'scroll' }}>
 						<Pagination />
 					</Box>
 				</VStack>

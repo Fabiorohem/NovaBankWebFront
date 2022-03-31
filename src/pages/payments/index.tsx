@@ -192,7 +192,7 @@ export default function Payments() {
 					<Box display={filters}>
 						<Filters props={{ setOpenPaymentTable }} />
 					</Box>
-					<Box width={{ base: '100%' }} maxW={1200} >
+					<Box width={{ base: '100%' }}  >
 						<Table size="sm">
 							<Thead>
 								<Tr>
@@ -257,7 +257,7 @@ export default function Payments() {
 					<Box display={filters}>
 						<Filters props={{ setOpenPaymentTable }} />
 					</Box>
-					<Box width={{ base: '100%' }} maxW={1200} overflowX={{ sm: 'scroll' }}>
+					<Box width={{ base: '100%' }}  overflowX={{ sm: 'scroll' }}>
 						<Table size={'sm'}>
 							<Thead>
 								<Tr>

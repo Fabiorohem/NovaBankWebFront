@@ -1,7 +1,7 @@
 import { Alert, AlertDescription, AlertIcon, AlertTitle, Box, CloseButton, Icon, propNames, Table, Tbody, Td, Text, Th, Thead, Tooltip, Tr, useDisclosure } from '@chakra-ui/react';
 import { Fragment, useEffect, useState } from 'react';
 import { useAccount } from '../../hooks/useAccount';
-import { FaUserAlt,FaPlus, FaEdit } from 'react-icons/fa';
+import { FaUserAlt, FaPlus, FaEdit } from 'react-icons/fa';
 import { api } from '../../services/api';
 import { AccountUsersModal } from '../../components/AccountUsers';
 import { AddUser } from '../../components/AddUser';
@@ -30,7 +30,7 @@ const RenderActionButtons = ({ props }) => {
 					cursor={'pointer'}
 				/>
 			</Tooltip>
-		
+
 			<Tooltip label="Adicionar Usuário" shouldWrapChildren>
 				<Icon
 					width={4}
@@ -65,23 +65,23 @@ const RenderActionButtons = ({ props }) => {
 	);
 };
 
-const SplitComponent = ({account}: Props) => {
+const SplitComponent = ({ account }: Props) => {
 
 
-	if(!account.splitFixedValue && !account.percentualValue ) return <p></p>
+	if (!account.splitFixedValue && !account.percentualValue) return <p></p>
 
-	if(account.splitFixedValue) return <p>R$ {account.splitFixedValue}</p>
-	if(account.percentualValue) return <p>{account.percentualValue}%</p>
+	if (account.splitFixedValue) return <p>R$ {account.splitFixedValue}</p>
+	if (account.percentualValue) return <p>{account.percentualValue}%</p>
 
 	return <p></p>
 }
 
 export default function Account() {
-	const { accounts, successMessage, errorMessage, setErrorMessage, setSuccessMessage, setAccounts} = useAccount();
+	const { accounts, successMessage, errorMessage, setErrorMessage, setSuccessMessage, setAccounts } = useAccount();
 	const { isOpen, onOpen, onClose } = useDisclosure();
 	const [accountId, setAccountId] = useState(undefined);
 	const [newUser, setNewUser] = useState(false)
-	const [account,setAccount] = useState(null);
+	const [account, setAccount] = useState(null);
 
 
 
@@ -89,7 +89,7 @@ export default function Account() {
 
 		<Fragment>
 			{accountId && !newUser &&
-				<AccountUsersModal accountId={accountId} isOpen={isOpen} onClose={() => {setAccountId(undefined);onClose()}} />
+				<AccountUsersModal accountId={accountId} isOpen={isOpen} onClose={() => { setAccountId(undefined); onClose() }} />
 			}
 
 			{
@@ -98,7 +98,7 @@ export default function Account() {
 			}
 			{
 				account &&
-				<UpdateAccountModal account={account} isOpen={isOpen} onClose={() => { setAccounts([]); setAccount(null); onClose() }}/>
+				<UpdateAccountModal account={account} isOpen={isOpen} onClose={() => { setAccounts([]); setAccount(null); onClose() }} />
 			}
 
 			<Text
@@ -111,32 +111,33 @@ export default function Account() {
 			>
 				Lista de contas
 			</Text>
-			<Box width={{ base: '100%' }} maxW={1200} overflowX={{ sm: 'scroll' }}>
-				{errorMessage && (
-					<Alert status="error" variant="solid" paddingBottom={'22px'} paddingTop={'22px'}>
-						<AlertIcon />
-						<AlertTitle mr={2}>Ação não disponível!</AlertTitle>
-						<AlertDescription>{errorMessage}</AlertDescription>
-						<CloseButton
-							onClick={() => setErrorMessage('')}
-							position="absolute"
-							right="8px"
-							top="8px"
-						/>
-					</Alert>
-				)}
-				{successMessage && (
-					<Alert status="success" variant="solid" paddingBottom={'22px'} paddingTop={'22px'}>
-						<AlertDescription>{successMessage}</AlertDescription>
-						<CloseButton
-							onClick={() => setSuccessMessage('')}
-							position="absolute"
-							right="8px"
-							top="8px"
-						/>
-					</Alert>
-				)}
-				<Table size={'sm'}>
+
+			{errorMessage && (
+				<Alert status="error" variant="solid" paddingBottom={'22px'} paddingTop={'22px'}>
+					<AlertIcon />
+					<AlertTitle mr={2}>Ação não disponível!</AlertTitle>
+					<AlertDescription>{errorMessage}</AlertDescription>
+					<CloseButton
+						onClick={() => setErrorMessage('')}
+						position="absolute"
+						right="8px"
+						top="8px"
+					/>
+				</Alert>
+			)}
+			{successMessage && (
+				<Alert status="success" variant="solid" paddingBottom={'22px'} paddingTop={'22px'}>
+					<AlertDescription>{successMessage}</AlertDescription>
+					<CloseButton
+						onClick={() => setSuccessMessage('')}
+						position="absolute"
+						right="8px"
+						top="8px"
+					/>
+				</Alert>
+			)}
+			<Box width={{ base: '100%' }} >
+				<Table>
 					<Thead>
 						<Tr>
 							<Th>Conta</Th>
@@ -172,6 +173,8 @@ export default function Account() {
 					</Tbody>
 				</Table>
 			</Box>
+
+
 		</Fragment>
 	);
 }

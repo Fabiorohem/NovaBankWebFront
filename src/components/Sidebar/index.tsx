@@ -18,22 +18,22 @@ import { useAccount } from '../../hooks/useAccount';
 export const Sidebar = () => {
 	const { toggleColorMode, colorMode } = useColorMode();
 	const { logout } = useAuth();
-	const [marginLeft, setMarginLeft] = useState(-288);
+	const [marginLeft, setMarginLeft] = useState(-248);
 	const [user, setUser] = useState(undefined);
 	const { accounts } = useAccount();
+	
 	const isMobile = ('ontouchstart' in document.documentElement && navigator.userAgent.match(/Mobi/));
-
+	
 	function handleMarginLeft() {
-		if (marginLeft === 0) {
-			setMarginLeft(-288);
+		if (marginLeft === 7) {
+			setMarginLeft(-248);
 		} else {
-			setMarginLeft(0);
+			setMarginLeft(7);
 		}
 	}
 
 
 	useEffect(() => {
-		
 			api.get('profile').then(({ data }) => setUser(data))
 	},[accounts])
 
@@ -44,14 +44,14 @@ export const Sidebar = () => {
 			display={'flex'}
 			width="full"
 			height="full"
-			marginLeft={isMobile ? marginLeft : 0}
+			marginLeft={isMobile ? marginLeft : 7}
 			maxW={{ base: 72 }}
 			borderRightColor="gray.600"
 			borderRightWidth={2}
 		>
 			{
 				isMobile && <Button marginLeft={344} marginTop={1} onClick={handleMarginLeft}>
-					{marginLeft === 0 ? <AiOutlineClose /> : <GiHamburgerMenu />}
+					{marginLeft === 7 ? <AiOutlineClose /> : <GiHamburgerMenu />}
 				</Button>
 			}
 			<Logo />
@@ -104,7 +104,7 @@ export const Sidebar = () => {
 			<List width="full" overflowY="auto">
 				{navItems.map((item, index) => (
 					<ListItem key={item.label}>
-						<NavItem item={item} onClick={() => setMarginLeft(-288)} />
+						<NavItem item={item} onClick={() => setMarginLeft(-248)} />
 					</ListItem>
 				))}
 

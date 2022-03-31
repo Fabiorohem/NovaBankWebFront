@@ -41,7 +41,7 @@ export const AccountUsersModal = ({ accountId, isOpen, onClose }) => {
                     <ModalCloseButton />
                     <ModalBody>
                         {users && (
-                            <Box width={{ base: '100%' }} maxW={1200} overflowX={{ sm: 'scroll' }}>
+                            <Box width={{ base: '100%' }}  overflowX={{ sm: 'scroll' }}>
                                 <Table variant="simple" colorScheme="blue" size={'sm'}>
                                     <Thead>
                                         <Tr>

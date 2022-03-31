@@ -82,8 +82,8 @@ const RenderActionButtons = ({ props }) => {
 
 const Filters = () => {
 	const { setFilters } = useClient();
-	const [ name, setName ] = useState('');
-	const [ cpfCnpj, setCpfCnpj ] = useState('');
+	const [name, setName] = useState('');
+	const [cpfCnpj, setCpfCnpj] = useState('');
 
 	function handleCleanInput() {
 		const inputName = document.querySelector('#name') as HTMLInputElement;
@@ -139,8 +139,8 @@ const Filters = () => {
 
 const Clients = () => {
 	const { clients, deleteClient, successMessage, setSuccessMessage, errorMessage, setErrorMessage } = useClient();
-	const [ clientId, setClientId ] = useState('');
-	const [ filters, setFilters ] = useState('none');
+	const [clientId, setClientId] = useState('');
+	const [filters, setFilters] = useState('none');
 	const { isOpen, onOpen, onClose } = useDisclosure();
 
 	function handleToggleFilters() {
@@ -162,72 +162,75 @@ const Clients = () => {
 					Buscar Clientes
 				</Text>
 			</Box>
-			{successMessage && (
-				<Alert status="success" variant="solid" paddingBottom={'22px'} paddingTop={'22px'}>
-					<AlertDescription>{successMessage}</AlertDescription>
-					<CloseButton onClick={() => setSuccessMessage('')} position="absolute" right="8px" top="15px" />
-				</Alert>
-			)}
-			{errorMessage && (
-				<Alert status="error" variant="solid">
-					<AlertIcon />
-					<AlertTitle mr={2}>Ação não disponível!</AlertTitle>
-					<AlertDescription>{errorMessage}</AlertDescription>
-					<CloseButton onClick={() => setErrorMessage('')} position="absolute" right="10px" />
-				</Alert>
-			)}
-			<Button
-				style={{
-					padding: 2,
-					width: 100,
-					textAlign: 'center',
-					marginLeft: 2
-				}}
-				colorScheme={'purple'}
-				onClick={handleToggleFilters}
-			>
-				Filtros
-			</Button>
-			<Box display={filters}>
-				<Filters />
-			</Box>
-			<Box width={{ base: '100%' }} maxW={1200} >
-				<Table size={'sm'}>
-					<Thead>
-						<Tr>
-							<Th display={{ sm: 'none', md: 'none', lg: 'table-cell' }}>Id</Th>
-							<Th display={{ sm: 'none', md: 'none', lg: 'table-cell' }}>Nome</Th>
-							<Th display={{ sm: 'none', md: 'none', lg: 'table-cell' }}>Cpf/Cnpj</Th>
-							<Th display={{ sm: 'none', md: 'none', lg: 'table-cell' }}>Email</Th>
-							<Th display={{ sm: 'none', md: 'none', lg: 'table-cell' }}>Celular</Th>
-							<Th>Actions</Th>
-						</Tr>
-					</Thead>
-					<Tbody>
-						{clients.map((client: ClientProps) => {
-							return (
-								<Tr key={client.id}>
-									<Td display={{ sm: 'none', md: 'none', lg: 'table-cell' }}>{client.id}</Td>
-									<Td>{client.name}</Td>
-									<Td>{client.cpfCnpj}</Td>
-									<Td display={{ sm: 'none', md: 'none', lg: 'table-cell' }}>{client.email}</Td>
-									<Td display={{ sm: 'none', md: 'none', lg: 'table-cell' }}>{client.mobilePhone}</Td>
-									<Td display={{ sm: 'none', md: 'none', lg: 'table-cell' }}>
-										<RenderActionButtons
-											props={{
-												id: client.id,
-												onOpen,
-												setClientId
-											}}
-										/>
-									</Td>
-								</Tr>
-							);
-						})}
-					</Tbody>
-				</Table>
-				<Pagination />
-			</Box>
+			<VStack width="full">
+				{successMessage && (
+					<Alert status="success" variant="solid" paddingBottom={'22px'} paddingTop={'22px'}>
+						<AlertDescription>{successMessage}</AlertDescription>
+						<CloseButton onClick={() => setSuccessMessage('')} position="absolute" right="8px" top="15px" />
+					</Alert>
+				)}
+				{errorMessage && (
+					<Alert status="error" variant="solid">
+						<AlertIcon />
+						<AlertTitle mr={2}>Ação não disponível!</AlertTitle>
+						<AlertDescription>{errorMessage}</AlertDescription>
+						<CloseButton onClick={() => setErrorMessage('')} position="absolute" right="10px" />
+					</Alert>
+				)}
+				<Button
+					style={{
+						padding: 2,
+						width: 100,
+						textAlign: 'center',
+						marginLeft: 2
+					}}
+					colorScheme={'purple'}
+					onClick={handleToggleFilters}
+				>
+					Filtros
+				</Button>
+				<Box display={filters}>
+					<Filters />
+				</Box>
+				<Box width={{ base: '100%' }}  >
+					<Table >
+						<Thead>
+							<Tr>
+								<Th display={{ sm: 'none', md: 'none', lg: 'table-cell' }}>Id</Th>
+								<Th display={{ sm: 'none', md: 'none', lg: 'table-cell' }}>Nome</Th>
+								<Th display={{ sm: 'none', md: 'none', lg: 'table-cell' }}>Cpf/Cnpj</Th>
+								<Th display={{ sm: 'none', md: 'none', lg: 'table-cell' }}>Email</Th>
+								<Th display={{ sm: 'none', md: 'none', lg: 'table-cell' }}>Celular</Th>
+								<Th>Actions</Th>
+							</Tr>
+						</Thead>
+						<Tbody>
+							{clients.map((client: ClientProps) => {
+								return (
+									<Tr key={client.id}>
+										<Td display={{ sm: 'none', md: 'none', lg: 'table-cell' }}>{client.id}</Td>
+										<Td>{client.name}</Td>
+										<Td>{client.cpfCnpj}</Td>
+										<Td display={{ sm: 'none', md: 'none', lg: 'table-cell' }}>{client.email}</Td>
+										<Td display={{ sm: 'none', md: 'none', lg: 'table-cell' }}>{client.mobilePhone}</Td>
+										<Td display={{ sm: 'none', md: 'none', lg: 'table-cell' }}>
+											<RenderActionButtons
+												props={{
+													id: client.id,
+													onOpen,
+													setClientId
+												}}
+											/>
+										</Td>
+									</Tr>
+								);
+							})}
+						</Tbody>
+					</Table>
+					<Pagination />
+				</Box>
+
+			</VStack>
 
 			<Modal isOpen={isOpen} onClose={onClose}>
 				<ModalOverlay />

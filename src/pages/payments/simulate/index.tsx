@@ -105,7 +105,7 @@ export default function Create() {
 					<Tooltip label="Fechar" shouldWrapChildren>
 						<CloseIcon onClick={() => setOpenSimulateTable(false)} />
 					</Tooltip>
-					<Box width={{ base: '100%' }} maxW={1200} height={10020} overflowX={{ sm: 'scroll' }}>
+					<Box width={{ base: '100%' }}  height={10020} overflowX={{ sm: 'scroll' }}>
 						<Table>
 							<Thead>
 								<Tr>

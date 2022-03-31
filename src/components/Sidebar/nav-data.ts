@@ -10,6 +10,7 @@ import { CgNotes } from 'react-icons/cg';
 import { NavItem } from '../../types/nav-item';
 
 export const navItems: NavItem[] = [
+	
 	{
 		type: 'header',
 		label: 'Contas',
@@ -28,6 +29,16 @@ export const navItems: NavItem[] = [
 		icon: FaUserAlt,
 		label: 'Criar Conta',
 		admin: true
+	},
+	{
+		type: 'header',
+		label: 'Perfil',
+	},
+	{
+		type: 'link',
+		href: '/profile',
+		icon: FaUserAlt,
+		label: 'Editar Perfil',
 	},
 	{
 		type: 'header',

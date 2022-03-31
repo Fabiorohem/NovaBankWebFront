@@ -76,7 +76,7 @@ const Search = ({ setCode, onClose }: Props) => {
 					}}
 				/>
 			</FormControl>
-			<Box width={{ base: '100%' }} maxW={1200} overflowX={{ sm: 'scroll' }}>
+			<Box width={{ base: '100%' }}  overflowX={{ sm: 'scroll' }}>
 				<Table variant="simple" colorScheme="blue" size={'sm'}>
 					<Thead>
 						<Tr>
