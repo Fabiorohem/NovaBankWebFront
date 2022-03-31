@@ -18,17 +18,17 @@ import { useAccount } from '../../hooks/useAccount';
 export const Sidebar = () => {
 	const { toggleColorMode, colorMode } = useColorMode();
 	const { logout } = useAuth();
-	const [marginLeft, setMarginLeft] = useState(-248);
+	const [marginLeft, setMarginLeft] = useState('-29vh');
 	const [user, setUser] = useState(undefined);
 	const { accounts } = useAccount();
 	
 	const isMobile = ('ontouchstart' in document.documentElement && navigator.userAgent.match(/Mobi/));
 	
 	function handleMarginLeft() {
-		if (marginLeft === 7) {
-			setMarginLeft(-248);
+		if (marginLeft === `0.8vh`) {
+			setMarginLeft(`-29vh`);
 		} else {
-			setMarginLeft(7);
+			setMarginLeft(`0.8vh`);
 		}
 	}
 
@@ -44,14 +44,14 @@ export const Sidebar = () => {
 			display={'flex'}
 			width="full"
 			height="full"
-			marginLeft={isMobile ? marginLeft : 7}
+			marginLeft={isMobile ? marginLeft : '0.8vh'}
 			maxW={{ base: 72 }}
 			borderRightColor="gray.600"
 			borderRightWidth={2}
 		>
 			{
 				isMobile && <Button marginLeft={344} marginTop={1} onClick={handleMarginLeft}>
-					{marginLeft === 7 ? <AiOutlineClose /> : <GiHamburgerMenu />}
+					{marginLeft === '0.8vh' ? <AiOutlineClose /> : <GiHamburgerMenu />}
 				</Button>
 			}
 			<Logo />
