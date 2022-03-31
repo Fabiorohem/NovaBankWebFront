@@ -8,7 +8,9 @@ type AccountType = {
 	name: string;
 	walletId: string;
 	percentualValue: number,
-	splitFixedValue: number
+	splitFixedValue: number,
+	agencia: string,
+	conta: string
 };
 
 interface AccountContextType {
@@ -31,8 +33,11 @@ export function AccountProvider({ children }) {
 
 	useEffect(() => {
 		if(!accounts.length && isAdmin)
+		{
+		
 			api.get('/account').then((response) => setAccounts(response.data));
-	}, [accounts]);
+		}
+	}, [accounts,isAdmin]);
 
 	async function createNewAccount(data: object) {
 		setLoading(true);

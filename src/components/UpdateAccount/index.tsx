@@ -18,6 +18,8 @@ export const UpdateAccountModal = ({ account, isOpen, onClose }) => {
 
     const [name, setName] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+    const [agencia, setAgencia] = useState('');
+    const [conta, setConta] = useState('');
 
     const [value, setValue] = useState(0);
     const [valueType, setValueType] = useState('Percentual');
@@ -27,6 +29,8 @@ export const UpdateAccountModal = ({ account, isOpen, onClose }) => {
     useEffect(() => {
         if (account) {
             setName(account.name)
+            setAgencia(account.agencia ? account.agencia  : '' )
+            setConta(account.conta ? account.conta  : '' )
 
             if (account.percentualValue) {
                 setValueType('Percentual')
@@ -51,9 +55,13 @@ export const UpdateAccountModal = ({ account, isOpen, onClose }) => {
             splitConfiguration.percentValue = Number(value)
         }
 
+
+
         const newValue = {
             name,
-            splitConfiguration
+            splitConfiguration,
+            agencia,
+            conta
         };
 
         try {
@@ -86,7 +94,7 @@ export const UpdateAccountModal = ({ account, isOpen, onClose }) => {
                                 <CloseButton onClick={() => setErrorMessage('')} position="absolute" right="10px" />
                             </Alert>)}
                         <FormControl>
-                            <FormLabel htmlFor="name">Configuração Split</FormLabel>
+                            <FormLabel htmlFor="name">Nome</FormLabel>
                             <Input
                                 id="name"
                                 value={name}
@@ -107,6 +115,24 @@ export const UpdateAccountModal = ({ account, isOpen, onClose }) => {
                                 value={value}
                                 onChange={(e) => setValue(Number(e.target.value))}
                                 placeholder={valueType == "Fixo" ? "R$ 0,00" : "10%"}
+                            />
+                        </FormControl>
+                        <FormControl>
+                            <FormLabel htmlFor="agencia">Agência</FormLabel>
+                            <Input
+                                id="agencia"
+                                value={agencia}
+                                onChange={(e) => setAgencia(e.target.value)}
+                                placeholder={"4521"}
+                            />
+                        </FormControl>
+                        <FormControl>
+                            <FormLabel htmlFor="conta">Conta</FormLabel>
+                            <Input
+                                id="conta"
+                                value={conta}
+                                onChange={(e) => setConta(e.target.value)}
+                                placeholder={"12090-3"}
                             />
                         </FormControl>
                         <br></br>

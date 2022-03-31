@@ -15,7 +15,7 @@ export default function Extract() {
 		api.get('/transferencias/balance').then((response) => setBalance(response.data.totalBalance));
 	}, []);
 
-	console.log(balance);
+
 
 	return (
 		<Fragment>

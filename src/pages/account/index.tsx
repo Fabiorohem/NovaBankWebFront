@@ -1,5 +1,5 @@
 import { Alert, AlertDescription, AlertIcon, AlertTitle, Box, CloseButton, Icon, propNames, Table, Tbody, Td, Text, Th, Thead, Tooltip, Tr, useDisclosure } from '@chakra-ui/react';
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { useAccount } from '../../hooks/useAccount';
 import { FaUserAlt,FaPlus, FaEdit } from 'react-icons/fa';
 import { api } from '../../services/api';
@@ -67,7 +67,6 @@ const RenderActionButtons = ({ props }) => {
 
 const SplitComponent = ({account}: Props) => {
 
-	console.log(account)
 
 	if(!account.splitFixedValue && !account.percentualValue ) return <p></p>
 
@@ -83,6 +82,8 @@ export default function Account() {
 	const [accountId, setAccountId] = useState(undefined);
 	const [newUser, setNewUser] = useState(false)
 	const [account,setAccount] = useState(null);
+
+
 
 	return (
 
@@ -141,6 +142,8 @@ export default function Account() {
 							<Th>Conta</Th>
 							<Th>WalletId</Th>
 							<Th>Split</Th>
+							<Th>Agência</Th>
+							<Th>Conta</Th>
 							<Th>Actions</Th>
 						</Tr>
 					</Thead>
@@ -150,6 +153,8 @@ export default function Account() {
 								<Td>{account.name}</Td>
 								<Td>{account.walletId}</Td>
 								<Td><SplitComponent account={account} /></Td>
+								<Td>{account.agencia}</Td>
+								<Td>{account.conta}</Td>
 								<Td>
 									<RenderActionButtons
 										props={{

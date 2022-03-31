@@ -324,7 +324,6 @@ export default function Charges() {
 						<Table size={'sm'}>
 							<Thead>
 								<Tr>
-									<Th display={{ sm: 'none', md: 'none', lg: 'table-cell' }}>Id</Th>
 									<Th display={{ sm: 'none', md: 'none', lg: 'table-cell' }}>Id do Cliente</Th>
 									<Th display={{ sm: 'none', md: 'none', lg: 'table-cell' }}>Descrição</Th>
 									<Th>Valor</Th>
@@ -338,7 +337,6 @@ export default function Charges() {
 								{charges.map((charge: ChargeProps) => {
 									return (
 										<Tr key={charge.id}>
-											<Td display={{ sm: 'none', md: 'none', lg: 'table-cell' }}>{charge.id}</Td>
 											<Td display={{ sm: 'none', md: 'none', lg: 'table-cell' }}>
 												{charge.customer}
 											</Td>

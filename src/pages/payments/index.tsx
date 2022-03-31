@@ -149,7 +149,7 @@ export default function Payments() {
 		cancelPayment,
 		payment
 	} = usePayment();
-	console.log(payments);
+
 	const [ paymentId, setPaymentId ] = useState('');
 	const [ openPaymentTable, setOpenPaymentTable ] = useState(false);
 	const { isOpen, onOpen, onClose } = useDisclosure();
@@ -192,7 +192,7 @@ export default function Payments() {
 					<Box display={filters}>
 						<Filters props={{ setOpenPaymentTable }} />
 					</Box>
-					<Box width={{ base: '100%' }} maxW={1200} overflowX={{ sm: 'scroll' }}>
+					<Box width={{ base: '100%' }} maxW={1200} >
 						<Table size="sm">
 							<Thead>
 								<Tr>
@@ -201,10 +201,7 @@ export default function Payments() {
 									<Th>Valor</Th>
 									<Th>Status</Th>
 									<Th>Data de vencimento</Th>
-									{payments.map((payment: PaymentProps) => {
-										payment.status !== 'CANCELLED' &&
-										payment.transactionReceiptUrl !== null && <Th>Actions</Th>;
-									})}
+									<Th>Actions</Th>
 								</Tr>
 							</Thead>
 							<Tbody>
@@ -239,8 +236,6 @@ export default function Payments() {
 								})}
 							</Tbody>
 						</Table>
-					</Box>
-					<Box width={{ base: '100%' }} maxW={1200} overflowX={{ sm: 'scroll' }}>
 						<Pagination />
 					</Box>
 				</VStack>
@@ -262,7 +257,7 @@ export default function Payments() {
 					<Box display={filters}>
 						<Filters props={{ setOpenPaymentTable }} />
 					</Box>
-					<Box width={{ base: '100%' }} maxW={1200} height={10020} overflowX={{ sm: 'scroll' }}>
+					<Box width={{ base: '100%' }} maxW={1200} overflowX={{ sm: 'scroll' }}>
 						<Table size={'sm'}>
 							<Thead>
 								<Tr>

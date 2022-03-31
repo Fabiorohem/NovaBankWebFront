@@ -70,8 +70,7 @@ export default function Charges({ data }) {
 
 	const [ feesMonth, setFeesMonth ] = useState('');
 	const [ chargeDescription, setChargeDescription ] = useState('');
-	console.log(postalService);
-
+	
 	function toggleChange() {
 		setPostalService(!postalService);
 	}

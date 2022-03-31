@@ -19,6 +19,7 @@ export const Content = ({ PrincipalPanel, pageProps }) => {
 					<VStack pt={12} width="full" height="full" spacing={6} overflow={'auto'}>
 						<PrincipalPanel {...pageProps} />
 					</VStack>
+					
 					{/* <Loading /> */}
 				</Fragment>
 			) : (

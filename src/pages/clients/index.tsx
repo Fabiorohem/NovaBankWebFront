@@ -196,8 +196,8 @@ const Clients = () => {
 					<Thead>
 						<Tr>
 							<Th display={{ sm: 'none', md: 'none', lg: 'table-cell' }}>Id</Th>
-							<Th>Nome</Th>
-							<Th>Cpf/Cnpj</Th>
+							<Th display={{ sm: 'none', md: 'none', lg: 'table-cell' }}>Nome</Th>
+							<Th display={{ sm: 'none', md: 'none', lg: 'table-cell' }}>Cpf/Cnpj</Th>
 							<Th display={{ sm: 'none', md: 'none', lg: 'table-cell' }}>Email</Th>
 							<Th display={{ sm: 'none', md: 'none', lg: 'table-cell' }}>Celular</Th>
 							<Th>Actions</Th>
@@ -212,7 +212,7 @@ const Clients = () => {
 									<Td>{client.cpfCnpj}</Td>
 									<Td display={{ sm: 'none', md: 'none', lg: 'table-cell' }}>{client.email}</Td>
 									<Td display={{ sm: 'none', md: 'none', lg: 'table-cell' }}>{client.mobilePhone}</Td>
-									<Td>
+									<Td display={{ sm: 'none', md: 'none', lg: 'table-cell' }}>
 										<RenderActionButtons
 											props={{
 												id: client.id,

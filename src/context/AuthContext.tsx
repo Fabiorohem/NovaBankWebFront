@@ -46,14 +46,13 @@ export function AuthProvider({ children }) {
 			const bodyStr = atob(accessToken.split('.')[1])
 
 			const bodyObj = JSON.parse(bodyStr)
-			console.log(bodyObj)
 			
 			if(bodyObj["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"] == "Admin")
 				setIsAdmin(true)
 			else
 				setIsAdmin(false)
 
-			console.log(isAdmin)
+			
 
 
 			setCookie(undefined, 'nextauth.token', accessToken, {
@@ -80,8 +79,19 @@ export function AuthProvider({ children }) {
 
 		if (token) {
 			setIsAuthenticated(true);
+
+			const bodyStr = atob(token.split('.')[1])
+
+			const bodyObj = JSON.parse(bodyStr)
+		
+			
+			if(bodyObj["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"] == "Admin")
+				setIsAdmin(true)
+			else
+				setIsAdmin(false)
 		} else {
 			setIsAuthenticated(false);
+			setIsAdmin(false)
 		}
 	}
 	function logout() {

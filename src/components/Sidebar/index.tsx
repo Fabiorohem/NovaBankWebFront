@@ -7,14 +7,20 @@ import { navItems } from './nav-data';
 import { NavItem } from './nav-item';
 import { FiSun, FiMoon } from 'react-icons/fi';
 import { useAuth } from '../../hooks/useAuth';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
+import { api } from '../../services/api';
+import { useAccount } from '../../hooks/useAccount';
+
+
+
 export const Sidebar = () => {
 	const { toggleColorMode, colorMode } = useColorMode();
-	const { logout, isAdmin } = useAuth();
+	const { logout } = useAuth();
 	const [marginLeft, setMarginLeft] = useState(-288);
-
+	const [user, setUser] = useState(undefined);
+	const { accounts } = useAccount();
 	const isMobile = ('ontouchstart' in document.documentElement && navigator.userAgent.match(/Mobi/));
 
 	function handleMarginLeft() {
@@ -24,6 +30,14 @@ export const Sidebar = () => {
 			setMarginLeft(0);
 		}
 	}
+
+
+	useEffect(() => {
+		
+			api.get('profile').then(({ data }) => setUser(data))
+	},[accounts])
+
+
 
 	return (
 		<VStack
@@ -40,7 +54,6 @@ export const Sidebar = () => {
 					{marginLeft === 0 ? <AiOutlineClose /> : <GiHamburgerMenu />}
 				</Button>
 			}
-
 			<Logo />
 			<Box
 				display={'flex'}
@@ -49,18 +62,44 @@ export const Sidebar = () => {
 				justifyContent={'center'}
 				borderBottomWidth={2}
 				borderBottomColor={'gray.600'}
+				maxWidth={'90%'}
 			>
-				<IconButton
-					aria-label="toggle theme"
-					alignItems="center"
-					onClick={toggleColorMode}
-					icon={colorMode === 'light' ? <FiMoon /> : <FiSun />}
-					marginRight={2}
-					marginBottom={2}
-				/>
-				<Button marginLeft={2} marginBottom={2} onClick={logout}>
-					Logout
-				</Button>
+
+				<VStack
+					display={'flex'}
+					width="full"
+					alignItems={"left"}
+				>
+
+					{user && (
+						<>
+							<Box>
+								<Text>Olá: <strong> {user.userName} </strong></Text>
+							</Box>
+							<Box>
+								<Text>Agência: <strong>{user.agencia}</strong> </Text>
+								<Text>Conta: <strong>{user.conta}</strong></Text>
+							</Box>
+						</>
+					)}
+
+					<Box width={'100%'}>
+						<IconButton
+							aria-label="toggle theme"
+							alignItems="center"
+							onClick={toggleColorMode}
+							icon={colorMode === 'light' ? <FiMoon /> : <FiSun />}
+							marginRight={2}
+							marginBottom={2}
+						/>
+						<Button width={'70%'} marginLeft={2} marginBottom={2} onClick={logout}>
+							Logout
+						</Button>
+					</Box>
+
+				</VStack>
+
+
 			</Box>
 			<List width="full" overflowY="auto">
 				{navItems.map((item, index) => (
@@ -68,7 +107,9 @@ export const Sidebar = () => {
 						<NavItem item={item} onClick={() => setMarginLeft(-288)} />
 					</ListItem>
 				))}
+
 			</List>
+
 		</VStack>
 	);
 };

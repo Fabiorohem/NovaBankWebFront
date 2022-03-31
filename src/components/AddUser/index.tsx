@@ -20,7 +20,7 @@ export const AddUser = ({ accountId, isOpen, onClose }) => {
     const { handleSubmit, register, formState: { errors }, getValues,reset} = useForm();
 
     const handleCreateUser = async (data) => {
-        console.log(data);
+    
         const {username,password,email } = data;
 
         try {

@@ -1,5 +1,10 @@
 @import url('http://fonts.cdnfonts.com/css/circular-std-book');
 
+html{
+	font-size: 1.591vh;
+}
+
+
 ::-webkit-calendar-picker-indicator {
 	filter: invert(1);
 }

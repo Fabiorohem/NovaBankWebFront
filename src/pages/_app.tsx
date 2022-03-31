@@ -15,7 +15,7 @@ import { PaymentProvider } from '../context/PaymentContext';
 import { TransferProvider } from '../context/TransferContext';
 import { AuthProvider } from '../context/AuthContext';
 import { AccountProvider } from '../context/AccountContext';
-
+import '../Styles/index.css'
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<ChakraProvider theme={theme}>
