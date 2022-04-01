@@ -77,6 +77,7 @@ export const Sidebar = () => {
 								<Text>Olá: <strong> {user.userName} </strong></Text>
 							</Box>
 							<Box>
+								<Text>Banco: <strong>461 - Asaas I.P S.A</strong></Text>
 								<Text>Agência: <strong>{user.agencia}</strong> </Text>
 								<Text>Conta: <strong>{user.conta}</strong></Text>
 							</Box>
