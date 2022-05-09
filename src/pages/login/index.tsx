@@ -7,6 +7,7 @@ import {
 	InputGroup,
 	Stack,
 	InputLeftElement,
+	Image,
 	chakra,
 	Box,
 	Link,
@@ -43,7 +44,13 @@ export default function Login() {
 			alignItems="center"
 		>
 			<Stack flexDir="column" mb="2" justifyContent="center" alignItems="center">
-				<Heading color="agiliza.purple"><img src="https://agiliza.app.br/assets/img/logo.png" width="250"></img></Heading>
+				<Heading color="agiliza.purple">
+					<Image
+				 		src="https://agiliza.app.br/assets/img/logo.png" 
+				 		width={250}
+						alt=""
+					 />
+				 </Heading>
 				<Box minW={{ base: '90%', md: '468px' }}>
 					<form onSubmit={handleSubmit(handleSignIn)}>
 						<Stack spacing={4} p="1rem" backgroundColor="gray.900" boxShadow="md">
