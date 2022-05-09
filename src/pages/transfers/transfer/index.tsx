@@ -113,7 +113,7 @@ export default function Transfer() {
 					<FormLabel htmlFor="accountType">Tipo de conta</FormLabel>
 					<Select value={transferType} onChange={(e) => setTransferType(e.target.value)}>
 						<option>Conta Bancária</option>
-						<option>Carteira Asaas</option>
+						<option>Carteira Agiliza</option>
 					</Select>
 				</FormControl>
 			</Box>
@@ -277,13 +277,13 @@ export default function Transfer() {
 						<form style={{ width: '100%' }}>
 							<Box display={'flex'} alignSelf={'flex-start'} maxH={'35px'} marginBottom={'15px'}>
 								<Text fontSize="2xl" display={'flex'} alignItems={'left'}>
-									Carteira Asaas
+									Carteira Agiliza
 								</Text>
 							</Box>
 							<br />
 							<Grid templateColumns={{ sm: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' }} gap={6}>
 								<FormControl>
-									<FormLabel htmlFor="walletId">Carteira Asaas</FormLabel>
+									<FormLabel htmlFor="walletId">Carteira Agiliza</FormLabel>
 									<Input
 										id="walletId"
 										placeholder="0021c712-d963-4d86-a59d-031e7ac51a2e"
