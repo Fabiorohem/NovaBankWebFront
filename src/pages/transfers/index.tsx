@@ -16,8 +16,10 @@ import {
 	FormLabel,
 	Icon,
 	Input,
+	Link,
 	Spacer,
 	Stack,
+	Tooltip,
 	Table,
 	Tbody,
 	Td,
@@ -27,6 +29,7 @@ import {
 	Tr
 } from '@chakra-ui/react';
 import { Fragment, useState } from 'react';
+import { MdPrint } from 'react-icons/md';
 import { RiSearchLine } from 'react-icons/ri';
 import { formatCurrency, parseToBrDate } from '../../helpers';
 import Pagination from '../../components/Pagination';
@@ -46,6 +49,22 @@ const statusMapping = {
 const typeBankMapping = {
 	BANK_ACCOUNT: 'Conta Bancária',
 	ASAAS_ACCOUNT: 'Carteira Asaas'
+};
+
+const RenderActionButtons = ({ props }) => {
+	return (
+		<Fragment>
+			{props.transactionReceiptUrl && (
+				<Tooltip label="Imprimir" shouldWrapChildren>
+					<Link href={props.transactionReceiptUrl} passHref>
+						<a target="_blank" rel="noreferrer">
+							<Icon width={5} height={5} mr={2} ml={0} color={'white'} as={MdPrint} cursor={'pointer'} />
+						</a>
+					</Link>
+				</Tooltip>
+			)}
+		</Fragment>
+	);
 };
 
 const Filters = ({ props }) => {
@@ -157,6 +176,7 @@ export default function Transfers() {
 									<Th>valor</Th>
 									<Th>tipo de conta</Th>
 									<Th>status</Th>
+									<Th>Comprovante</Th>
 								</Tr>
 							</Thead>
 							<Tbody>
@@ -170,6 +190,16 @@ export default function Transfers() {
 										<Td>{formatCurrency(transfer.value)}</Td>
 										<Td>{typeBankMapping[transfer.type]}</Td>
 										<Td>{statusMapping[transfer.status]}</Td>
+										<Td>
+													<RenderActionButtons
+														props={{
+															id: transfer.id,
+															value: transfer.value,
+															transactionReceiptUrl: transfer.transactionReceiptUrl,
+															status: transfer.status
+														}}
+													/>
+												</Td>
 									</Tr>
 								))}
 							</Tbody>
@@ -210,6 +240,7 @@ export default function Transfers() {
 									<Th>valor</Th>
 									<Th>tipo de conta</Th>
 									<Th>status</Th>
+									<Th>Comprovante</Th>
 								</Tr>
 							</Thead>
 							<Tbody>
@@ -222,6 +253,16 @@ export default function Transfers() {
 									<Td>{formatCurrency(transfer.value)}</Td>
 									<Td>{typeBankMapping[transfer.status]}</Td>
 									<Td>{statusMapping[transfer.status]}</Td>
+									<Td>
+													<RenderActionButtons
+														props={{
+															id: transfer.id,
+															value: transfer.value,
+															transactionReceiptUrl: transfer.transactionReceiptUrl,
+															status: transfer.status
+														}}
+													/>
+												</Td>
 								</Tr>
 							</Tbody>
 						</Table>
