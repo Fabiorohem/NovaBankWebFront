@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import {
 	Accordion,
 	AccordionButton,
@@ -16,7 +17,6 @@ import {
 	FormLabel,
 	Icon,
 	Input,
-	Link,
 	Spacer,
 	Stack,
 	Tooltip,
