@@ -1,36 +1,58 @@
-## NovaFront
+# NovaBank Front
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Esse é o front-end do Gateway de pagamentos NovaBank-front e a base do projeto é o Next.Js, tailwind e Typescript.
 
-## Getting Started
+## Funcionalidades
 
-First, run the development server:
+- Logar
+- Transferir
+- Continue a lista posteriormente
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Variáveis de ambiente
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Para executar o projeto é necessário ter as variáveis de ambientes devidamente configuradas de acordo com o .env.example:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+    NEXT_PUBLIC_CEP_API_BASE_URL=
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Iniciar
 
-## Learn More
+### Método 1
 
-To learn more about Next.js, take a look at the following resources:
+Para rodar o projeto localmente é simples, certifique-se de ter [Git](https://git-scm.com/downloads) e o [Docker e Docker-compose](https://www.docker.com/products/docker-desktop/) instalados em seu computador local.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Siga para o diretório em que deseja instalar o projeto e digite o comando:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+    git clone https://github.com/Contabilize-Empresarial/NovaBank-Front.git
 
-## Deploy on Vercel
+Em seguida, navegue até o diretório do projeto e digite o comando:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    docker-compose up --build
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Após o build, acesse o seguinte link e poderá utilizar o projeto:
+
+    http://localhost:3000
+
+### Método 2
+
+Certiqui-se de ter o [Git](https://git-scm.com/downloads) e o [Node](https://nodejs.org/en/download/package-manager) instalados em seu computador.
+
+Siga para o diretório em que deseja instalar o projeto e digite o comando:
+
+    git clone https://github.com/Contabilize-Empresarial/NovaBank-Front.git
+
+Em seguida, navegue até o diretório do projeto e digite o comando:
+
+    npm i
+
+Após a instalação das dependências, digite o comando:
+
+    npm run dev
+
+Após o build, acesse o seguinte link e poderá utilizar o projeto:
+
+    http://localhost:3000
+
+## Licença
+
+Todo projeto pertence a contabilize e todo aquele que não estiver autorizado acessar, produzir, executar ou repassar isso vai democraticamente ir jogar no vasco.
